@@ -209,6 +209,10 @@ function setupGate() {
       );
 
 
+      button.disabled =
+        true;
+
+
       document.body.classList.remove(
         "gate-active"
       );
@@ -217,12 +221,16 @@ function setupGate() {
       window.setTimeout(
         () => {
 
-          if (gate.parentNode) {
+          if (
+            gate.parentNode
+          ) {
+
             gate.remove();
+
           }
 
         },
-        1850
+        1800
       );
 
     }
