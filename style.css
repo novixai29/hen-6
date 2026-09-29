@@ -14,6 +14,8 @@
 
   --wood: #765341;
   --wood-dark: #50382f;
+  --wood-deep: #3f2c25;
+  --wood-light: #8d6750;
 
   --green: #66765a;
   --green-dark: #48543f;
@@ -115,7 +117,7 @@ svg {
 
 
 /* ==========================================================
-   MAIN SITE BACKGROUND
+   SITE BACKGROUND
 ========================================================== */
 
 .site-background {
@@ -257,7 +259,7 @@ main {
 
 
 /* ==========================================================
-   NEW PREMIUM WOODEN ENTRANCE
+   INTRO — SAME VISUAL IDENTITY
 ========================================================== */
 
 .gate-screen {
@@ -271,21 +273,29 @@ main {
 
   display: flex;
 
+  flex-direction: column;
+
   align-items: center;
 
   justify-content: center;
 
   padding:
-    max(18px, env(safe-area-inset-top))
-    16px
-    max(18px, env(safe-area-inset-bottom));
+    max(
+      18px,
+      env(safe-area-inset-top)
+    )
+    18px
+    max(
+      20px,
+      env(safe-area-inset-bottom)
+    );
 
   background:
-    #2d2723;
+    var(--stone);
 
   transition:
-    opacity 0.7s ease 1.05s,
-    visibility 0s linear 1.8s;
+    opacity 0.7s ease 1s,
+    visibility 0s linear 1.75s;
 }
 
 .gate-screen.is-open {
@@ -295,105 +305,55 @@ main {
 }
 
 
-/* DARK PREMIUM WALL */
+/* SAME CREAM WALL AS WEBSITE */
 
-.entry-background {
+.gate-background {
   position: absolute;
 
   inset: 0;
 
   background:
     radial-gradient(
-      circle at 50% 38%,
-      rgba(151, 111, 73, 0.2),
+      circle at 50% 35%,
+      rgba(255,255,255,0.62),
       transparent 38%
     ),
     linear-gradient(
       180deg,
-      #3e3732 0%,
-      #2c2723 62%,
-      #211d1a 100%
+      #f4eddf 0%,
+      #e9dfcd 62%,
+      #ddd0b9 100%
     );
 }
 
-.entry-background::after {
+.gate-background::after {
   content: "";
 
   position: absolute;
 
   inset: 0;
 
-  opacity: 0.13;
+  opacity: 0.16;
 
   background-image:
-    radial-gradient(
-      rgba(255,255,255,0.12) 0.5px,
-      transparent 0.5px
+    linear-gradient(
+      rgba(90,73,55,0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(90,73,55,0.035) 1px,
+      transparent 1px
     );
 
   background-size:
-    8px 8px;
+    55px 36px;
 }
 
 
-/* AMBIENT WARM LIGHT */
+/* SUBTLE ARCHITECTURAL LINES */
 
-.ambient-light {
-  position: absolute;
-
-  top: 22%;
-
-  width: 220px;
-  height: 420px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(211, 157, 91, 0.13);
-
-  filter:
-    blur(80px);
-
-  animation:
-    ambientPulse
-    4s
-    ease-in-out
-    infinite;
-}
-
-.ambient-light-left {
-  left: -120px;
-}
-
-.ambient-light-right {
-  right: -120px;
-
-  animation-delay: 1.3s;
-}
-
-@keyframes ambientPulse {
-
-  0%,
-  100% {
-    opacity: 0.55;
-
-    transform:
-      scale(0.95);
-  }
-
-  50% {
-    opacity: 0.85;
-
-    transform:
-      scale(1.08);
-  }
-
-}
-
-
-/* PARTICLES */
-
-.entry-particles {
+.intro-architecture {
   position: absolute;
 
   inset: 0;
@@ -401,225 +361,174 @@ main {
   pointer-events: none;
 }
 
-.entry-particles span {
+.architecture-line {
   position: absolute;
 
-  width: 3px;
-  height: 3px;
+  top: 17%;
+  bottom: 7%;
 
-  border-radius: 50%;
+  width: 1px;
 
   background:
-    rgba(232, 193, 139, 0.5);
-
-  animation:
-    particleFloat
-    7s
-    ease-in-out
-    infinite;
+    linear-gradient(
+      transparent,
+      rgba(73,106,117,0.08),
+      rgba(73,106,117,0.12),
+      transparent
+    );
 }
 
-.entry-particles span:nth-child(1) {
-  top: 20%;
-  left: 22%;
+.line-a {
+  left: 9%;
 }
 
-.entry-particles span:nth-child(2) {
-  top: 36%;
-  left: 13%;
-
-  animation-delay: 1.1s;
-}
-
-.entry-particles span:nth-child(3) {
-  top: 26%;
-  right: 17%;
-
-  animation-delay: 2.4s;
-}
-
-.entry-particles span:nth-child(4) {
-  top: 56%;
-  right: 10%;
-
-  animation-delay: 0.6s;
-}
-
-.entry-particles span:nth-child(5) {
-  bottom: 22%;
-  left: 17%;
-
-  animation-delay: 3s;
-}
-
-.entry-particles span:nth-child(6) {
-  bottom: 17%;
-  right: 24%;
-
-  animation-delay: 1.8s;
-}
-
-@keyframes particleFloat {
-
-  0%,
-  100% {
-    transform:
-      translateY(0);
-
-    opacity: 0.18;
-  }
-
-  50% {
-    transform:
-      translateY(-18px);
-
-    opacity: 0.7;
-  }
-
+.line-b {
+  right: 9%;
 }
 
 
 /* ==========================================================
-   LANTERNS
+   INTRO PLANTS
 ========================================================== */
 
-.entry-lantern {
+.intro-plant {
   position: absolute;
 
-  top: 25%;
+  bottom: 5%;
 
-  z-index: 3;
+  z-index: 2;
 
-  width: 42px;
+  width: 90px;
+  height: 210px;
 
-  display: flex;
+  opacity: 0.46;
 
-  flex-direction: column;
-
-  align-items: center;
-}
-
-.entry-lantern-left {
-  left:
-    max(20px, 5vw);
-}
-
-.entry-lantern-right {
-  right:
-    max(20px, 5vw);
-}
-
-.lantern-hook {
-  width: 1px;
-  height: 40px;
-
-  background:
-    rgba(202, 163, 110, 0.48);
-}
-
-.lantern-body {
-  position: relative;
-
-  width: 32px;
-  height: 54px;
-
-  border:
-    1px solid
-    rgba(202, 163, 110, 0.66);
-
-  border-radius:
-    10px 10px 14px 14px;
-
-  background:
-    rgba(30, 25, 22, 0.85);
-
-  box-shadow:
-    0 0 30px
-    rgba(219, 160, 87, 0.12);
+  transform-origin:
+    center bottom;
 
   animation:
-    lanternMove
-    4.5s
+    plantMove
+    6s
     ease-in-out
     infinite;
 }
 
-.entry-lantern-right
-.lantern-body {
+.intro-plant-right {
+  right: -14px;
+}
+
+.intro-plant-left {
+  left: -14px;
+
+  transform:
+    scaleX(-1);
 
   animation-delay: 1.5s;
 }
 
-.lantern-body i {
+.plant-stem {
   position: absolute;
 
-  top: 13px;
-  right: 8px;
-  bottom: 13px;
-  left: 8px;
+  bottom: 0;
+  left: 50%;
 
-  border-radius: 9px;
+  width: 1px;
+  height: 190px;
 
   background:
-    radial-gradient(
-      circle,
-      #f1c98f 0%,
-      #c48748 48%,
-      transparent 72%
+    linear-gradient(
+      transparent,
+      var(--green-dark)
     );
 
-  animation:
-    lanternGlow
-    2.8s
-    ease-in-out
-    infinite;
+  transform:
+    rotate(-11deg);
 }
 
-@keyframes lanternMove {
+.leaf {
+  position: absolute;
+
+  width: 34px;
+  height: 14px;
+
+  border-radius:
+    100% 0 100% 0;
+
+  background:
+    var(--green);
+
+  transform-origin:
+    bottom left;
+}
+
+.leaf-1 {
+  bottom: 42px;
+
+  left: 40px;
+
+  transform:
+    rotate(-35deg);
+}
+
+.leaf-2 {
+  bottom: 85px;
+
+  left: 47px;
+
+  transform:
+    rotate(25deg)
+    scaleX(-1);
+}
+
+.leaf-3 {
+  bottom: 125px;
+
+  left: 35px;
+
+  transform:
+    rotate(-25deg);
+}
+
+.leaf-4 {
+  bottom: 160px;
+
+  left: 44px;
+
+  transform:
+    rotate(24deg)
+    scaleX(-1);
+}
+
+@keyframes plantMove {
 
   0%,
   100% {
-    transform:
-      rotate(-1.2deg);
+    rotate: -0.8deg;
   }
 
   50% {
-    transform:
-      rotate(1.2deg);
-  }
-
-}
-
-@keyframes lanternGlow {
-
-  0%,
-  100% {
-    opacity: 0.65;
-  }
-
-  50% {
-    opacity: 1;
+    rotate: 1.2deg;
   }
 
 }
 
 
 /* ==========================================================
-   WOODEN ENTRANCE
+   INTRO ENTRY
 ========================================================== */
 
-.wooden-entry {
+.intro-entry {
   position: relative;
 
   z-index: 5;
 
   width:
-    min(76vw, 430px);
+    min(78vw, 410px);
 
   height:
-    min(74vh, 670px);
+    min(72svh, 650px);
 
-  min-height: 510px;
+  min-height: 490px;
 
   display: flex;
 
@@ -627,22 +536,20 @@ main {
 
   align-items: center;
 
-  justify-content: flex-start;
-
   opacity: 0;
 
   transform:
-    translateY(38px);
+    translateY(25px);
 
   animation:
-    entranceAppear
-    1s
+    introEntry
+    0.9s
     var(--ease)
-    0.1s
+    0.08s
     forwards;
 }
 
-@keyframes entranceAppear {
+@keyframes introEntry {
 
   to {
     opacity: 1;
@@ -654,16 +561,18 @@ main {
 }
 
 
-/* PLAQUE */
+/* ==========================================================
+   HOUSE SIGN
+========================================================== */
 
-.entry-plaque {
+.house-sign {
   position: relative;
 
   z-index: 8;
 
-  width: 86%;
+  width: 82%;
 
-  min-height: 78px;
+  min-height: 72px;
 
   display: flex;
 
@@ -673,139 +582,144 @@ main {
 
   justify-content: center;
 
-  gap: 6px;
+  gap: 5px;
 
-  margin-bottom: 17px;
+  margin-bottom: 15px;
 
   padding:
     12px 18px;
 
-  border:
-    1px solid
-    rgba(193, 149, 92, 0.45);
+  border-radius: 3px;
 
   background:
-    linear-gradient(
-      145deg,
-      #4b3428,
-      #30231d
-    );
+    var(--blue);
+
+  color:
+    var(--stone-light);
 
   box-shadow:
-    0 10px 30px
-    rgba(0,0,0,0.2),
-    inset 0 0 0 1px
-    rgba(255,255,255,0.035);
+    0 12px 25px
+    rgba(60,72,76,0.12);
 
   text-align: center;
 }
 
-.entry-plaque::before,
-.entry-plaque::after {
+.house-sign::before {
   content: "";
 
   position: absolute;
 
-  top: 50%;
+  inset: 6px;
 
-  width: 18px;
-  height: 1px;
+  border:
+    1px solid
+    rgba(245,238,223,0.18);
 
-  background:
-    rgba(205, 163, 108, 0.45);
+  pointer-events: none;
 }
 
-.entry-plaque::before {
-  right: 15px;
-}
-
-.entry-plaque::after {
-  left: 15px;
-}
-
-.entry-plaque span {
-  color:
-    #caa56e;
-
+.house-sign span {
   font-size: 0.52rem;
 
-  font-weight: 600;
+  opacity: 0.72;
 }
 
-.entry-plaque strong {
-  max-width: 82%;
-
-  color:
-    #f1e5d4;
+.house-sign strong {
+  max-width: 92%;
 
   font-family:
     var(--font-title);
 
   font-size:
-    clamp(0.8rem, 3.6vw, 1.1rem);
+    clamp(0.8rem, 3.7vw, 1.1rem);
+
+  font-weight: 500;
 
   line-height: 1.7;
+
+  overflow-wrap: anywhere;
 }
 
 
 /* ==========================================================
-   DOOR FRAME
+   STONE ENTRANCE
 ========================================================== */
 
-.wood-door-frame {
+.stone-entrance {
   position: relative;
 
   width: 100%;
 
   flex: 1;
 
-  min-height: 390px;
+  min-height: 400px;
 
   overflow: hidden;
 
   border:
-    15px solid
-    #3b2a23;
+    14px solid
+    var(--stone-light);
 
-  border-top-width: 18px;
-
-  border-bottom-width: 19px;
+  border-bottom-width: 18px;
 
   border-radius:
-    7px 7px 2px 2px;
+    185px 185px 5px 5px;
 
   background:
-    #d5a45f;
+    #d6c6aa;
 
   box-shadow:
-    0 35px 65px
-    rgba(0,0,0,0.34),
+    0 24px 50px
+    rgba(90,70,48,0.12),
     inset 0 0 0 1px
-    rgba(224, 187, 133, 0.3);
+    rgba(90,70,50,0.1);
 
-  perspective: 1400px;
+  perspective: 1300px;
 }
 
-.wood-door-frame::before {
+.stone-entrance::before {
   content: "";
 
   position: absolute;
 
-  inset: -9px;
-
-  z-index: 10;
-
-  pointer-events: none;
+  inset: -8px;
 
   border:
     1px solid
-    rgba(198, 154, 99, 0.19);
+    rgba(73,106,117,0.1);
+
+  border-radius:
+    190px 190px 8px 8px;
+
+  pointer-events: none;
+}
+
+.stone-inner-line {
+  position: absolute;
+
+  top: 9px;
+  right: 9px;
+  bottom: 9px;
+  left: 9px;
+
+  z-index: 10;
+
+  border:
+    1px solid
+    rgba(73,106,117,0.08);
+
+  border-radius:
+    170px 170px 2px 2px;
+
+  pointer-events: none;
 }
 
 
-/* LIGHT INSIDE */
+/* ==========================================================
+   LIGHT BEHIND DOOR
+========================================================== */
 
-.door-interior {
+.door-light {
   position: absolute;
 
   inset: 0;
@@ -820,43 +734,43 @@ main {
 
   justify-content: center;
 
+  color:
+    var(--wood-dark);
+
   background:
     linear-gradient(
       180deg,
-      #ba8a4e,
-      #f3d298 45%,
-      #b98245
+      #f3e1b7 0%,
+      #f4e5c3 48%,
+      #ddc08b 100%
     );
-
-  color:
-    #513523;
 }
 
-.interior-light {
+.light-glow {
   position: absolute;
 
   inset: 0;
 
   background:
     radial-gradient(
-      ellipse at center,
-      rgba(255,245,210,0.95),
-      rgba(239,198,128,0.54) 50%,
-      transparent 80%
+      circle at 50% 42%,
+      rgba(255,252,222,0.95),
+      rgba(255,231,177,0.48) 43%,
+      transparent 78%
     );
 
   animation:
-    interiorGlow
-    3.6s
+    lightBreathe
+    4s
     ease-in-out
     infinite;
 }
 
-@keyframes interiorGlow {
+@keyframes lightBreathe {
 
   0%,
   100% {
-    opacity: 0.7;
+    opacity: 0.65;
   }
 
   50% {
@@ -865,30 +779,36 @@ main {
 
 }
 
-.door-interior span,
-.door-interior strong {
+.door-light span,
+.door-light strong {
   position: relative;
 
   z-index: 2;
 }
 
-.door-interior span {
-  font-size: 0.58rem;
+.door-light span {
+  color:
+    var(--green-dark);
+
+  font-size: 0.6rem;
 }
 
-.door-interior strong {
+.door-light strong {
   margin-top: 8px;
+
+  color:
+    var(--wood-dark);
 
   font-family:
     var(--font-title);
 
   font-size:
-    clamp(1.5rem, 7vw, 2.5rem);
+    clamp(2rem, 10vw, 3.5rem);
 }
 
 
 /* ==========================================================
-   DOOR PANELS
+   WOOD DOORS
 ========================================================== */
 
 .wood-door {
@@ -906,24 +826,30 @@ main {
   background:
     linear-gradient(
       90deg,
-      #50352a 0%,
-      #684736 26%,
-      #79533d 50%,
-      #634230 77%,
-      #493027 100%
+      #604437,
+      #765442 35%,
+      #825f49 52%,
+      #71503f 73%,
+      #5a3f34
     );
 
   box-shadow:
-    inset 0 0 32px
-    rgba(0,0,0,0.3);
+    inset 0 0 28px
+    rgba(45,28,21,0.22);
 
   transition:
     transform
-    1.35s
+    1.3s
     var(--ease),
     filter
-    0.8s
+    0.7s
     ease;
+
+  animation:
+    doorBreathe
+    5s
+    ease-in-out
+    infinite;
 }
 
 .wood-door-right {
@@ -931,7 +857,7 @@ main {
 
   border-left:
     1px solid
-    rgba(28,18,14,0.75);
+    rgba(60,38,29,0.48);
 
   transform-origin:
     right center;
@@ -942,279 +868,161 @@ main {
 
   border-right:
     1px solid
-    rgba(28,18,14,0.75);
+    rgba(60,38,29,0.48);
 
   transform-origin:
     left center;
+
+  animation-delay: 0.35s;
+}
+
+@keyframes doorBreathe {
+
+  0%,
+  100% {
+    filter:
+      brightness(1);
+  }
+
+  50% {
+    filter:
+      brightness(1.035);
+  }
+
 }
 
 
-/* WOOD GRAIN */
+/* WOOD TEXTURE */
 
-.door-grain {
+.wood-grain {
   position: absolute;
 
   inset: 0;
 
-  opacity: 0.21;
+  opacity: 0.14;
 
   background:
     repeating-linear-gradient(
       88deg,
-      transparent 0 12px,
-      rgba(20,12,9,0.35) 13px 14px,
-      transparent 15px 30px
+      transparent 0 14px,
+      rgba(53,33,25,0.36) 15px 16px,
+      transparent 17px 34px
     );
 }
 
-.door-grain::after {
+.wood-grain::after {
   content: "";
 
   position: absolute;
 
   inset: 0;
 
-  opacity: 0.22;
-
   background:
-    repeating-radial-gradient(
-      ellipse at 50% 50%,
-      transparent 0 25px,
-      rgba(255,255,255,0.1) 26px 27px,
-      transparent 28px 50px
+    radial-gradient(
+      ellipse at 35% 30%,
+      transparent 0 24px,
+      rgba(255,255,255,0.09) 25px 26px,
+      transparent 27px 52px
     );
 
+  opacity: 0.38;
+
   transform:
-    scaleX(2.2);
+    scaleX(1.8);
 }
 
 
-/* INNER BORDER */
+/* WOOD PANELS */
 
-.door-inner-border {
+.wood-panel {
   position: absolute;
 
-  top: 18px;
-  right: 15px;
-  bottom: 18px;
-  left: 15px;
+  right: 12%;
+  left: 12%;
 
   border:
     1px solid
-    rgba(202, 160, 104, 0.4);
+    rgba(231,213,185,0.17);
 
   box-shadow:
-    inset 0 0 0 5px
-    rgba(45,27,20,0.2);
+    inset 0 0 0 4px
+    rgba(63,43,34,0.12);
 }
 
-
-/* UPPER PANEL */
-
-.door-upper-panel {
-  position: absolute;
-
+.wood-panel-top {
   top: 8%;
-  right: 12%;
-  left: 12%;
 
-  height: 24%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  border:
-    1px solid
-    rgba(197, 154, 99, 0.35);
-
-  background:
-    rgba(30,18,14,0.1);
-}
-
-.door-upper-panel span {
-  width: 18px;
-  height: 18px;
-
-  border:
-    1px solid
-    rgba(206,165,108,0.55);
-
-  transform:
-    rotate(45deg);
-}
-
-.door-upper-panel i {
-  width: 8px;
-  height: 8px;
-
-  background:
-    rgba(211,171,111,0.54);
-
-  transform:
-    rotate(45deg);
-}
-
-
-/* CENTER PANEL */
-
-.door-center-panel {
-  position: absolute;
-
-  top: 37%;
-  right: 12%;
-  left: 12%;
-
-  height: 28%;
+  height: 25%;
 
   display: grid;
 
   place-items: center;
-
-  border:
-    1px solid
-    rgba(197,154,99,0.35);
-
-  background:
-    rgba(30,18,14,0.09);
 }
 
-.door-medallion {
-  position: relative;
+.wood-panel-top span {
+  width: 52%;
 
-  width: 68px;
-  height: 68px;
+  height: 1px;
+
+  background:
+    rgba(234,218,190,0.21);
+}
+
+.wood-panel-middle {
+  top: 38%;
+
+  height: 27%;
 
   display: grid;
 
   place-items: center;
-
-  border:
-    1px solid
-    rgba(210,170,110,0.55);
-
-  border-radius: 50%;
 }
 
-.door-medallion::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 7px;
-
-  border:
-    1px solid
-    rgba(210,170,110,0.26);
-
-  border-radius: 50%;
-}
-
-.door-medallion span {
-  width: 24px;
-  height: 24px;
-
-  border:
-    1px solid
-    rgba(210,170,110,0.62);
-
-  transform:
-    rotate(45deg);
-}
-
-.door-medallion i {
-  position: absolute;
-
-  width: 8px;
-  height: 8px;
-
-  background:
-    #bb8a4f;
-
-  transform:
-    rotate(45deg);
-}
-
-
-/* LOWER PANEL */
-
-.door-lower-panel {
-  position: absolute;
-
-  right: 12%;
+.wood-panel-bottom {
   bottom: 7%;
-  left: 12%;
 
   height: 19%;
 
   display: grid;
 
   place-items: center;
-
-  border:
-    1px solid
-    rgba(197,154,99,0.3);
-
-  background:
-    rgba(30,18,14,0.09);
 }
 
-.door-lower-panel span {
-  width: 55%;
+.wood-panel-bottom span {
+  width: 50%;
 
   height: 1px;
 
   background:
-    rgba(205,163,106,0.45);
+    rgba(234,218,190,0.2);
 }
 
 
-/* ==========================================================
-   BRASS STUDS
-========================================================== */
+/* SIMPLE DIAMOND — SAME MINIMAL STYLE */
 
-.door-studs {
-  position: absolute;
+.wood-diamond {
+  width: 56px;
+  height: 56px;
 
-  top: 17%;
+  display: grid;
 
-  bottom: 17%;
+  place-items: center;
 
-  display: flex;
+  border:
+    1px solid
+    rgba(232,215,187,0.22);
 
-  flex-direction: column;
-
-  justify-content: space-between;
+  transform:
+    rotate(45deg);
 }
 
-.door-studs-right {
-  right: 7px;
-}
+.wood-diamond span {
+  width: 18px;
+  height: 18px;
 
-.door-studs-left {
-  left: 7px;
-}
-
-.door-studs span {
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 35% 35%,
-      #e1ba76,
-      #8e6536
-    );
-
-  box-shadow:
-    0 1px 2px
-    rgba(0,0,0,0.35);
+  border:
+    1px solid
+    rgba(232,215,187,0.28);
 }
 
 
@@ -1222,131 +1030,59 @@ main {
    HANDLES
 ========================================================== */
 
-.brass-handle {
+.door-handle {
   position: absolute;
 
   top: 52%;
 
-  width: 18px;
-  height: 65px;
-
-  border:
-    1px solid
-    rgba(227, 187, 117, 0.86);
+  width: 13px;
+  height: 58px;
 
   border-radius: 999px;
 
   background:
-    linear-gradient(
-      90deg,
-      #7a542d,
-      #c49350,
-      #edc77b,
-      #8a5f31
-    );
+    #9e7a52;
 
   box-shadow:
-    0 5px 12px
-    rgba(0,0,0,0.25);
-
-  overflow: hidden;
+    inset 0 0 0 1px
+    rgba(255,255,255,0.18),
+    0 3px 8px
+    rgba(50,30,20,0.2);
 }
 
-.brass-handle-right {
-  left: 15px;
+.door-handle-right {
+  left: 13px;
 }
 
-.brass-handle-left {
-  right: 15px;
+.door-handle-left {
+  right: 13px;
 }
 
-.brass-handle span {
+.door-handle i {
   position: absolute;
 
-  top: -30%;
+  top: 8px;
+  right: 50%;
 
-  left: -120%;
+  width: 3px;
+  height: 3px;
 
-  width: 70%;
-  height: 150%;
+  border-radius: 50%;
 
   background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.62),
-      transparent
-    );
+    rgba(245,232,205,0.6);
 
   transform:
-    rotate(18deg);
+    translateX(50%);
 
   animation:
-    handleShine
-    4.8s
+    handleGlow
+    3.8s
     ease-in-out
     infinite;
 }
 
-.brass-handle-left span {
-  animation-delay: 1.8s;
-}
-
-@keyframes handleShine {
-
-  0%,
-  62% {
-    left: -120%;
-  }
-
-  78% {
-    left: 160%;
-  }
-
-  100% {
-    left: 160%;
-  }
-
-}
-
-
-/* CENTER LIGHT */
-
-.door-light-line {
-  position: absolute;
-
-  top: 3%;
-  bottom: 3%;
-  left: 50%;
-
-  z-index: 7;
-
-  width: 2px;
-
-  background:
-    linear-gradient(
-      transparent,
-      rgba(255,210,133,0.25),
-      rgba(255,224,165,0.75),
-      rgba(255,210,133,0.25),
-      transparent
-    );
-
-  box-shadow:
-    0 0 18px
-    rgba(255,205,120,0.35);
-
-  transform:
-    translateX(-50%);
-
-  animation:
-    seamGlow
-    3s
-    ease-in-out
-    infinite;
-}
-
-@keyframes seamGlow {
+@keyframes handleGlow {
 
   0%,
   100% {
@@ -1360,32 +1096,86 @@ main {
 }
 
 
-/* OPEN DOORS */
+/* ==========================================================
+   CENTER SEAM
+========================================================== */
+
+.door-seam {
+  position: absolute;
+
+  top: 5%;
+  bottom: 4%;
+  left: 50%;
+
+  z-index: 7;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(244,221,174,0.22),
+      rgba(244,221,174,0.55),
+      rgba(244,221,174,0.2),
+      transparent
+    );
+
+  box-shadow:
+    0 0 11px
+    rgba(244,214,156,0.2);
+
+  transform:
+    translateX(-50%);
+
+  animation:
+    seamLight
+    3.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes seamLight {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+}
+
+
+/* ==========================================================
+   OPEN ANIMATION
+========================================================== */
 
 .gate-screen.is-open
 .wood-door-right {
 
   transform:
-    perspective(1100px)
-    rotateY(-103deg);
+    perspective(1200px)
+    rotateY(-102deg);
 
   filter:
-    brightness(0.8);
+    brightness(0.9);
 }
 
 .gate-screen.is-open
 .wood-door-left {
 
   transform:
-    perspective(1100px)
-    rotateY(103deg);
+    perspective(1200px)
+    rotateY(102deg);
 
   filter:
-    brightness(0.8);
+    brightness(0.9);
 }
 
 .gate-screen.is-open
-.door-light-line {
+.door-seam {
 
   opacity: 0;
 
@@ -1393,43 +1183,52 @@ main {
     opacity 0.25s ease;
 }
 
+.gate-screen.is-open
+.intro-plant {
+
+  opacity: 0.2;
+
+  transition:
+    opacity 0.5s ease;
+}
+
 
 /* ==========================================================
-   WOOD THRESHOLD
+   STONE STEP
 ========================================================== */
 
-.wood-threshold {
+.door-step {
   position: relative;
 
   width: 108%;
 
-  height: 18px;
+  height: 19px;
 
-  margin-top: -3px;
+  margin-top: -1px;
 
   background:
     linear-gradient(
       180deg,
-      #644331,
-      #3c2922
+      #d3c2a4,
+      #baa98e
     );
 
   box-shadow:
-    0 14px 22px
-    rgba(0,0,0,0.25);
+    0 12px 20px
+    rgba(88,68,46,0.12);
 }
 
-.wood-threshold span {
+.door-step span {
   position: absolute;
 
   top: 5px;
-  right: 7%;
-  left: 7%;
+  right: 8%;
+  left: 8%;
 
   height: 1px;
 
   background:
-    rgba(211,166,109,0.18);
+    rgba(73,106,117,0.1);
 }
 
 
@@ -1438,18 +1237,9 @@ main {
 ========================================================== */
 
 .gate-button {
-  position: absolute;
+  position: relative;
 
   z-index: 20;
-
-  bottom:
-    max(
-      22px,
-      calc(
-        14px +
-        env(safe-area-inset-bottom)
-      )
-    );
 
   display: inline-flex;
 
@@ -1463,46 +1253,46 @@ main {
 
   min-height: 50px;
 
+  margin-top: 21px;
+
   padding:
-    0 22px;
+    0 23px;
 
   border:
     1px solid
-    rgba(210,170,112,0.48);
+    rgba(73,106,117,0.28);
 
   border-radius: 999px;
 
   background:
-    rgba(36,29,25,0.88);
+    rgba(245,238,223,0.76);
 
   color:
-    #f0dfc7;
+    var(--blue-deep);
 
   cursor: pointer;
 
-  backdrop-filter:
-    blur(10px);
-
   box-shadow:
-    0 12px 30px
-    rgba(0,0,0,0.2);
+    0 10px 28px
+    rgba(80,64,45,0.08);
 
   opacity: 0;
 
   animation:
-    entranceButton
+    buttonAppear
     0.7s
     ease
-    0.8s
+    0.75s
     forwards;
 
   transition:
     background 0.25s ease,
+    color 0.25s ease,
     transform 0.25s ease,
     opacity 0.25s ease;
 }
 
-@keyframes entranceButton {
+@keyframes buttonAppear {
 
   to {
     opacity: 1;
@@ -1852,7 +1642,7 @@ main {
 
 
 /* ==========================================================
-   DATE
+   DATE PLAQUE
 ========================================================== */
 
 .date-section {
@@ -2939,9 +2729,9 @@ footer i {
     --page-padding: 42px;
   }
 
-  .wooden-entry {
+  .intro-entry {
     width:
-      min(62vw, 440px);
+      min(56vw, 420px);
   }
 
   .countdown {
@@ -2960,7 +2750,10 @@ footer i {
 
   .gate-button:hover {
     background:
-      rgba(100, 67, 48, 0.95);
+      var(--blue);
+
+    color:
+      var(--stone-light);
 
     transform:
       translateY(-2px);
@@ -2994,84 +2787,84 @@ footer i {
 
 @media (max-width: 430px) {
 
-  .wooden-entry {
+  .intro-entry {
     width: 78vw;
 
-    height: 72vh;
+    height: min(69svh, 590px);
 
-    min-height: 490px;
+    min-height: 455px;
   }
 
-  .wood-door-frame {
+  .house-sign {
+    width: 86%;
+
+    min-height: 65px;
+
+    margin-bottom: 12px;
+  }
+
+  .stone-entrance {
+    min-height: 350px;
+
     border-width: 11px;
 
-    border-top-width: 14px;
-
     border-bottom-width: 15px;
+
+    border-radius:
+      155px 155px 4px 4px;
   }
 
-  .entry-plaque {
-    width: 90%;
-
-    min-height: 70px;
+  .stone-inner-line {
+    border-radius:
+      145px 145px 2px 2px;
   }
 
-  .entry-lantern {
-    transform:
-      scale(0.84);
+  .wood-panel {
+    right: 10%;
+    left: 10%;
   }
 
-  .entry-lantern-left {
-    left: 8px;
+  .wood-diamond {
+    width: 46px;
+    height: 46px;
   }
 
-  .entry-lantern-right {
-    right: 8px;
-  }
-
-  .door-inner-border {
-    top: 13px;
-    right: 10px;
-    bottom: 13px;
-    left: 10px;
-  }
-
-  .door-upper-panel {
-    right: 9%;
-    left: 9%;
-  }
-
-  .door-center-panel {
-    right: 9%;
-    left: 9%;
-  }
-
-  .door-lower-panel {
-    right: 9%;
-    left: 9%;
-  }
-
-  .door-medallion {
-    width: 54px;
-    height: 54px;
-  }
-
-  .door-medallion span {
-    width: 19px;
-    height: 19px;
-  }
-
-  .brass-handle {
+  .wood-diamond span {
     width: 15px;
-    height: 56px;
+    height: 15px;
   }
 
-  .brass-handle-right {
-    left: 10px;
+  .door-handle {
+    width: 11px;
+    height: 50px;
   }
 
-  .brass-handle-left {
-    right: 10px;
+  .door-handle-right {
+    left: 9px;
+  }
+
+  .door-handle-left {
+    right: 9px;
+  }
+
+  .intro-plant {
+    width: 75px;
+
+    opacity: 0.34;
+  }
+
+  .intro-plant-right {
+    right: -29px;
+  }
+
+  .intro-plant-left {
+    left: -29px;
+  }
+
+  .gate-button {
+    min-height: 48px;
+
+    margin-top: 17px;
   }
 
   .courtyard-frame {
@@ -3131,41 +2924,56 @@ footer i {
 ========================================================== */
 
 @media
-(max-height: 730px)
+(max-height: 720px)
 and
 (max-width: 500px) {
 
-  .wooden-entry {
-    height: 78vh;
+  .intro-entry {
+    height: 74svh;
 
-    min-height: 430px;
+    min-height: 410px;
+
+    width: 69vw;
   }
 
-  .entry-plaque {
-    min-height: 60px;
+  .house-sign {
+    min-height: 56px;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
     padding:
       8px 12px;
   }
 
-  .wood-door-frame {
-    min-height: 320px;
+  .house-sign span {
+    font-size: 0.45rem;
+  }
+
+  .house-sign strong {
+    font-size: 0.74rem;
+  }
+
+  .stone-entrance {
+    min-height: 300px;
+  }
+
+  .wood-diamond {
+    width: 40px;
+    height: 40px;
+  }
+
+  .door-handle {
+    height: 42px;
   }
 
   .gate-button {
-    min-height: 43px;
+    min-height: 42px;
 
-    bottom:
-      max(
-        8px,
-        env(safe-area-inset-bottom)
-      );
+    margin-top: 10px;
   }
 
-  .entry-lantern {
-    top: 20%;
+  .intro-plant {
+    opacity: 0.24;
   }
 
 }
@@ -3180,41 +2988,56 @@ and
 and
 (max-width: 500px) {
 
-  .wooden-entry {
-    width: 68vw;
+  .intro-entry {
+    width: 61vw;
 
-    height: 79vh;
+    height: 73svh;
 
-    min-height: 370px;
+    min-height: 350px;
   }
 
-  .entry-plaque {
-    min-height: 52px;
+  .house-sign {
+    min-height: 48px;
   }
 
-  .entry-plaque span {
-    font-size: 0.46rem;
-  }
-
-  .entry-plaque strong {
-    font-size: 0.72rem;
-  }
-
-  .wood-door-frame {
-    min-height: 270px;
-  }
-
-  .door-medallion {
-    width: 44px;
-    height: 44px;
-  }
-
-  .brass-handle {
-    height: 45px;
-  }
-
-  .entry-lantern {
+  .house-sign span {
     display: none;
+  }
+
+  .house-sign strong {
+    font-size: 0.68rem;
+  }
+
+  .stone-entrance {
+    min-height: 255px;
+
+    border-width: 9px;
+
+    border-bottom-width: 12px;
+  }
+
+  .wood-panel-top {
+    height: 22%;
+  }
+
+  .wood-panel-middle {
+    top: 36%;
+
+    height: 27%;
+  }
+
+  .wood-panel-bottom {
+    height: 17%;
+  }
+
+  .intro-plant {
+    display: none;
+  }
+
+  .gate-button {
+    min-width: 160px;
+
+    min-height: 40px;
   }
 
 }
@@ -3254,7 +3077,7 @@ and
     transform: none;
   }
 
-  .wooden-entry {
+  .intro-entry {
     opacity: 1;
 
     transform: none;
