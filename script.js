@@ -222,7 +222,7 @@ function setupGate() {
           }
 
         },
-        1800
+        1850
       );
 
     }
