@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#3f3028">
+  <meta name="theme-color" content="#e8ddc8">
 
   <meta
     name="description"
@@ -32,20 +32,28 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
 
 <body>
 
   <!-- =====================================================
-       NEW WOODEN ENTRANCE
+       INTRO — SAME VISUAL IDENTITY AS THE WEBSITE
   ====================================================== -->
 
   <div
@@ -54,78 +62,70 @@
   >
 
     <div
-      class="entry-background"
+      class="gate-background"
       aria-hidden="true"
     ></div>
 
 
-    <div
-      class="ambient-light ambient-light-left"
-      aria-hidden="true"
-    ></div>
+    <!-- SOFT ARCHITECTURAL LINES -->
 
     <div
-      class="ambient-light ambient-light-right"
-      aria-hidden="true"
-    ></div>
-
-
-    <!-- DUST PARTICLES -->
-
-    <div
-      class="entry-particles"
+      class="intro-architecture"
       aria-hidden="true"
     >
 
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="architecture-line line-a"></span>
+
+      <span class="architecture-line line-b"></span>
 
     </div>
 
 
-    <!-- SIDE LANTERN LEFT -->
+    <!-- SIMPLE PLANTS -->
 
     <div
-      class="entry-lantern entry-lantern-left"
+      class="intro-plant intro-plant-right"
       aria-hidden="true"
     >
 
-      <span class="lantern-hook"></span>
+      <span class="plant-stem"></span>
 
-      <div class="lantern-body">
-        <i></i>
-      </div>
+      <i class="leaf leaf-1"></i>
+
+      <i class="leaf leaf-2"></i>
+
+      <i class="leaf leaf-3"></i>
+
+      <i class="leaf leaf-4"></i>
 
     </div>
 
 
-    <!-- SIDE LANTERN RIGHT -->
-
     <div
-      class="entry-lantern entry-lantern-right"
+      class="intro-plant intro-plant-left"
       aria-hidden="true"
     >
 
-      <span class="lantern-hook"></span>
+      <span class="plant-stem"></span>
 
-      <div class="lantern-body">
-        <i></i>
-      </div>
+      <i class="leaf leaf-1"></i>
+
+      <i class="leaf leaf-2"></i>
+
+      <i class="leaf leaf-3"></i>
+
+      <i class="leaf leaf-4"></i>
 
     </div>
 
 
-    <!-- MAIN WOOD ENTRANCE -->
+    <!-- MAIN ENTRANCE -->
 
-    <div class="wooden-entry">
+    <div class="intro-entry">
 
-      <!-- PLAQUE -->
+      <!-- SMALL BLUE HOUSE SIGN -->
 
-      <div class="entry-plaque">
+      <div class="house-sign">
 
         <span>
           أهلاً وسهلاً
@@ -138,172 +138,134 @@
       </div>
 
 
-      <!-- DOOR FRAME -->
+      <!-- STONE ARCH -->
 
-      <div class="wood-door-frame">
+      <div class="stone-entrance">
+
+        <div
+          class="stone-inner-line"
+          aria-hidden="true"
+        ></div>
+
 
         <!-- LIGHT BEHIND DOOR -->
 
         <div
-          class="door-interior"
+          class="door-light"
           aria-hidden="true"
         >
 
-          <div class="interior-light"></div>
+          <div class="light-glow"></div>
 
           <span>
-            تفضلوا
+            الليلة فرحة
           </span>
 
-          <strong>
-            أهلاً بكم
+          <strong data-bind="groomName">
+            عمر
           </strong>
 
         </div>
 
 
-        <!-- RIGHT DOOR -->
+        <!-- RIGHT WOODEN DOOR -->
 
         <div
           class="wood-door wood-door-right"
           aria-hidden="true"
         >
 
-          <div class="door-grain"></div>
+          <div class="wood-grain"></div>
 
 
-          <div class="door-inner-border">
+          <div class="wood-panel wood-panel-top">
 
-            <div class="door-upper-panel">
-
-              <span></span>
-
-              <i></i>
-
-              <span></span>
-
-            </div>
-
-
-            <div class="door-center-panel">
-
-              <div class="door-medallion">
-
-                <span></span>
-
-                <i></i>
-
-              </div>
-
-            </div>
-
-
-            <div class="door-lower-panel">
-
-              <span></span>
-
-            </div>
-
-          </div>
-
-
-          <div class="door-studs door-studs-right">
-
-            <span></span>
-            <span></span>
-            <span></span>
             <span></span>
 
           </div>
 
 
-          <div class="brass-handle brass-handle-right">
+          <div class="wood-panel wood-panel-middle">
+
+            <div class="wood-diamond">
+              <span></span>
+            </div>
+
+          </div>
+
+
+          <div class="wood-panel wood-panel-bottom">
 
             <span></span>
+
+          </div>
+
+
+          <div class="door-handle door-handle-right">
+
+            <i></i>
 
           </div>
 
         </div>
 
 
-        <!-- LEFT DOOR -->
+        <!-- LEFT WOODEN DOOR -->
 
         <div
           class="wood-door wood-door-left"
           aria-hidden="true"
         >
 
-          <div class="door-grain"></div>
+          <div class="wood-grain"></div>
 
 
-          <div class="door-inner-border">
+          <div class="wood-panel wood-panel-top">
 
-            <div class="door-upper-panel">
-
-              <span></span>
-
-              <i></i>
-
-              <span></span>
-
-            </div>
-
-
-            <div class="door-center-panel">
-
-              <div class="door-medallion">
-
-                <span></span>
-
-                <i></i>
-
-              </div>
-
-            </div>
-
-
-            <div class="door-lower-panel">
-
-              <span></span>
-
-            </div>
-
-          </div>
-
-
-          <div class="door-studs door-studs-left">
-
-            <span></span>
-            <span></span>
-            <span></span>
             <span></span>
 
           </div>
 
 
-          <div class="brass-handle brass-handle-left">
+          <div class="wood-panel wood-panel-middle">
+
+            <div class="wood-diamond">
+              <span></span>
+            </div>
+
+          </div>
+
+
+          <div class="wood-panel wood-panel-bottom">
 
             <span></span>
+
+          </div>
+
+
+          <div class="door-handle door-handle-left">
+
+            <i></i>
 
           </div>
 
         </div>
 
 
-        <!-- CENTER LIGHT LINE -->
+        <!-- LIGHT BETWEEN THE TWO DOORS -->
 
         <div
-          class="door-light-line"
+          class="door-seam"
           aria-hidden="true"
         ></div>
 
       </div>
 
 
-      <!-- THRESHOLD -->
+      <!-- STONE STEP -->
 
       <div
-        class="wood-threshold"
+        class="door-step"
         aria-hidden="true"
       >
 
@@ -323,7 +285,7 @@
     >
 
       <span>
-        افتح باب الدار
+        تفضلوا بالدخول
       </span>
 
       <svg
@@ -339,10 +301,13 @@
 
 
   <!-- =====================================================
-       BACKGROUND
+       SITE BACKGROUND
   ====================================================== -->
 
-  <div class="site-background" aria-hidden="true">
+  <div
+    class="site-background"
+    aria-hidden="true"
+  >
 
     <div class="wall-texture"></div>
 
@@ -599,7 +564,10 @@
 
       <div class="house-path">
 
-        <div class="path-line" aria-hidden="true">
+        <div
+          class="path-line"
+          aria-hidden="true"
+        >
           <span></span>
         </div>
 
@@ -721,7 +689,7 @@
 
 
     <!-- =================================================
-         THRESHOLD / LOCATION
+         LOCATION
     ================================================== -->
 
     <section class="location-section section">
