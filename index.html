@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#496a75">
+  <meta name="theme-color" content="#3f3028">
 
   <meta
     name="description"
@@ -45,7 +45,7 @@
 <body>
 
   <!-- =====================================================
-       INTRO GATE
+       NEW WOODEN ENTRANCE
   ====================================================== -->
 
   <div
@@ -53,111 +53,287 @@
     id="gateScreen"
   >
 
-    <div class="gate-sky" aria-hidden="true"></div>
+    <div
+      class="entry-background"
+      aria-hidden="true"
+    ></div>
 
 
-    <div class="house-front">
+    <div
+      class="ambient-light ambient-light-left"
+      aria-hidden="true"
+    ></div>
 
-      <div class="stone-wall stone-wall-left" aria-hidden="true"></div>
+    <div
+      class="ambient-light ambient-light-right"
+      aria-hidden="true"
+    ></div>
 
-      <div class="stone-wall stone-wall-right" aria-hidden="true"></div>
+
+    <!-- DUST PARTICLES -->
+
+    <div
+      class="entry-particles"
+      aria-hidden="true"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
 
 
-      <div class="gate-arch">
+    <!-- SIDE LANTERN LEFT -->
 
-        <div class="arch-sign">
+    <div
+      class="entry-lantern entry-lantern-left"
+      aria-hidden="true"
+    >
+
+      <span class="lantern-hook"></span>
+
+      <div class="lantern-body">
+        <i></i>
+      </div>
+
+    </div>
+
+
+    <!-- SIDE LANTERN RIGHT -->
+
+    <div
+      class="entry-lantern entry-lantern-right"
+      aria-hidden="true"
+    >
+
+      <span class="lantern-hook"></span>
+
+      <div class="lantern-body">
+        <i></i>
+      </div>
+
+    </div>
+
+
+    <!-- MAIN WOOD ENTRANCE -->
+
+    <div class="wooden-entry">
+
+      <!-- PLAQUE -->
+
+      <div class="entry-plaque">
+
+        <span>
+          أهلاً وسهلاً
+        </span>
+
+        <strong data-bind="fatherHouse">
+          دار السيد نزار صالح
+        </strong>
+
+      </div>
+
+
+      <!-- DOOR FRAME -->
+
+      <div class="wood-door-frame">
+
+        <!-- LIGHT BEHIND DOOR -->
+
+        <div
+          class="door-interior"
+          aria-hidden="true"
+        >
+
+          <div class="interior-light"></div>
 
           <span>
-            أهلاً وسهلاً
+            تفضلوا
           </span>
 
-          <strong data-bind="fatherHouse">
-            دار السيد نزار صالح
+          <strong>
+            أهلاً بكم
           </strong>
 
         </div>
 
 
-        <div class="door-frame">
+        <!-- RIGHT DOOR -->
 
-          <div
-            class="door-panel door-right"
-            aria-hidden="true"
-          >
+        <div
+          class="wood-door wood-door-right"
+          aria-hidden="true"
+        >
 
-            <div class="door-panel-inner">
+          <div class="door-grain"></div>
 
-              <span class="door-wood-line"></span>
 
-              <div class="door-geometric">
+          <div class="door-inner-border">
+
+            <div class="door-upper-panel">
+
+              <span></span>
+
+              <i></i>
+
+              <span></span>
+
+            </div>
+
+
+            <div class="door-center-panel">
+
+              <div class="door-medallion">
+
+                <span></span>
+
                 <i></i>
-                <i></i>
-                <i></i>
+
               </div>
 
-              <span class="door-handle"></span>
+            </div>
+
+
+            <div class="door-lower-panel">
+
+              <span></span>
 
             </div>
 
           </div>
 
 
-          <div
-            class="door-panel door-left"
-            aria-hidden="true"
-          >
+          <div class="door-studs door-studs-right">
 
-            <div class="door-panel-inner">
-
-              <span class="door-wood-line"></span>
-
-              <div class="door-geometric">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-              <span class="door-handle"></span>
-
-            </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
           </div>
 
 
-          <div class="gate-light" aria-hidden="true">
+          <div class="brass-handle brass-handle-right">
 
-            <span>
-              الليلة فرحة
-            </span>
-
-            <strong data-bind="groomName">
-              عمر
-            </strong>
+            <span></span>
 
           </div>
 
         </div>
 
+
+        <!-- LEFT DOOR -->
+
+        <div
+          class="wood-door wood-door-left"
+          aria-hidden="true"
+        >
+
+          <div class="door-grain"></div>
+
+
+          <div class="door-inner-border">
+
+            <div class="door-upper-panel">
+
+              <span></span>
+
+              <i></i>
+
+              <span></span>
+
+            </div>
+
+
+            <div class="door-center-panel">
+
+              <div class="door-medallion">
+
+                <span></span>
+
+                <i></i>
+
+              </div>
+
+            </div>
+
+
+            <div class="door-lower-panel">
+
+              <span></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="door-studs door-studs-left">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+
+          <div class="brass-handle brass-handle-left">
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CENTER LIGHT LINE -->
+
+        <div
+          class="door-light-line"
+          aria-hidden="true"
+        ></div>
+
       </div>
 
 
-      <button
-        type="button"
-        class="gate-button"
-        id="openGate"
+      <!-- THRESHOLD -->
+
+      <div
+        class="wood-threshold"
+        aria-hidden="true"
       >
 
-        <span>
-          تفضلوا بالدخول
-        </span>
+        <span></span>
 
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6 12h12M14 7l5 5-5 5"/>
-        </svg>
-
-      </button>
+      </div>
 
     </div>
+
+
+    <!-- OPEN BUTTON -->
+
+    <button
+      type="button"
+      class="gate-button"
+      id="openGate"
+    >
+
+      <span>
+        افتح باب الدار
+      </span>
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M6 12h12M14 7l5 5-5 5"/>
+      </svg>
+
+    </button>
 
   </div>
 
@@ -552,7 +728,10 @@
 
       <div class="threshold-card">
 
-        <div class="threshold-top" aria-hidden="true">
+        <div
+          class="threshold-top"
+          aria-hidden="true"
+        >
 
           <span></span>
 
@@ -690,7 +869,10 @@
 
       <div class="countdown-house">
 
-        <div class="countdown-roof" aria-hidden="true"></div>
+        <div
+          class="countdown-roof"
+          aria-hidden="true"
+        ></div>
 
 
         <div
